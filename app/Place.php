@@ -8,7 +8,7 @@ class Place extends Model
 {
     // $fillable設定
     protected $fillable = [
-        'title', 'content', 'pocture_path', 'user_id',
+        'title', 'content', 'picture_path', 'user_id',
     ];
     
     // ユーザと投稿の一対多の関係を設定

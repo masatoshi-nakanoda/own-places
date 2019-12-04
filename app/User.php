@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
     
     // ユーザと投稿の一対多の関係を設定する際のDB操作
-    public function place()
+    public function places()
     {
         return $this->hasMany(Place::class);
     }
@@ -44,7 +44,7 @@ class User extends Authenticatable
     {
         $exist = $this->is_like($placeId);
         
-        if($exit){
+        if($exist){
             return false;
         } else {
             $this->likes()->attach($placeId);
@@ -52,12 +52,12 @@ class User extends Authenticatable
         }
     }
     
-    // ユーザが投稿をお気に入り解除する際のDB操作
-    public function unlike($placeId)
+    // ユーザが投稿をお気に入りを解除する際のDB操作
+    public function nolike($placeId)
     {
         $exist = $this->is_like($placeId);
         
-        if(exist){
+        if($exist){
             $this->likes()->detach($placeId);
         } else {
             return false;

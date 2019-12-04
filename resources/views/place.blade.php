@@ -5,28 +5,35 @@
         <title>OWN-PLACES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('/css/welcome.css') }}">
     </head>
     
     <body>
         @include('commons.navbar')
         @include('commons.error_messages')
-                
-        <div class="top">
-            
+         @if(count($places) > 0)
+            <table class="table">
+                <thread>
+                    <tr>
+                        <th>投稿日時</th>
+                        <th>投稿タイトル</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    @foreach($places as $place)
+                        <tr>
+                            <td>{{ $place->created_at }}</td>
+                            <td><a href="{{ route('places.show', ['id' => $place->id]) }}">{{ $place->title }}</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
             <div class="text-center">
-                <h1>OWN-PLACES</h1>
-                <h2>あなたが好きなお店や場所を誰かに紹介したり、<br>
-                    自分の知らない誰かのお気に入りのお店や場所に行ってみませんか？<br>
-                </h2>
-                <br><br>
-                <h3>どの様な投稿がされているかまず見てみませんか？{!! link_to_route('places.all', '投稿一覧へ', [], []) !!}</h3>
-                <br><br><br>
-                <h4>投稿は下記ユーザ登録ボタンよりユーザ登録の上実施できます</h4>
-                <br><br>
-                {!! link_to_route('signup.get', 'ユーザ登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                <h1>投稿はまだありません。/h1>
             </div>
-        </div>
+        @endif
+        
+         {{ $places->links('pagination::bootstrap-4') }}
             
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
