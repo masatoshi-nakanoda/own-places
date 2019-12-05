@@ -19,6 +19,18 @@
                 </div>
                 
                 <div class="form-group">
+                    {!! Form::label('lat', '緯度（lat）') !!}
+                    {!! Form::number('lat', old('lat'),['class' => 'form-control', 'step' => 'any']) !!}
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('lng', '経度（lng）') !!}
+                    {!! Form::number('lng', old('lng'),['class' => 'form-control', 'step' => 'any']) !!}
+                </div>
+                
+                <p class="mt-2">緯度・経度は<a href="/map" target="brank">こちら</a>で検索してくだい</p>
+                
+                <div class="form-group">
                     {!! Form::label('image', '画像アップロード') !!}
                     {!! Form::file('image') !!}
                 </div>

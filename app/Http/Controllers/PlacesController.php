@@ -54,6 +54,8 @@ class PlacesController extends Controller
                 'content' => $request->content,
                 // アップロードした画像のフルパスを取得
                 'picture_path' => $request->picture_path = Storage::disk('s3')->url($path),
+                'lat' => $request->lat,
+                'lng' => $request->lng,
             ]);
             
         return redirect ('/home');
@@ -91,6 +93,8 @@ class PlacesController extends Controller
         $place->title = $request->title;
         $place->content = $request->content;
         $place->picture_path = $request->picture_path = Storage::disk('s3')->url($path);
+        $place->lat = $request->lat;
+        $place->lng = $request->lng;
         $place->save();
             
         return redirect ('/home');

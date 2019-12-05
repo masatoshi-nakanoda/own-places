@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>MyMap</title>
+        <title>Map</title>
         <style>
             #target {
                 width: 550px;
@@ -13,7 +13,9 @@
     <body>
         <div id="target"></div>
         <input type="text" id="address">
-        <button id="searh">Search</button>
+        <button id="searh">検索</button>
+        <br>住所もしくは具体的な場所の名前（お店名、建物名の名前等）を入力して検索で表示された<br>
+            緯度（lat）,経度(lng)をフォームに入力してください。
         <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBT4HMf1Vh0UTo-NI8pKi57vBKcyASWp6o&language&callback=initMap" async defer></script>
         <script>
             function initMap(){

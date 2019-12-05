@@ -20,6 +20,16 @@
                 </div>
                 
                 <div class="form-group">
+                    {!! Form::label('lat', '緯度（lat）') !!}
+                    {!! Form::number('lat', old('lat'),['class' => 'form-control']) !!}
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('lmg', '経度（lng）') !!}
+                    {!! Form::number('lng', old('lng'),['class' => 'form-control']) !!}
+                </div>
+                
+                <div class="form-group">
                     {!! Form::label('image', '画像アップロード') !!}
                     {!! Form::file('image') !!}
                 </div>

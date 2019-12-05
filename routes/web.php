@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/testmap', function () {
-    return view('map.test');
+Route::get('/map', function () {
+    return view('map.map');
 });
 
 // 投稿一覧ページ
