@@ -55,7 +55,6 @@ class PlacesController extends Controller
                 'lat' =>'numeric',
                 'lng' =>'numeric',
                 'image' => 'file|image|mimes:jpeg,png,jpg,gif',
-                'tag' => 'required|max:191',
             ]);
             
         // s3アップロード開始
