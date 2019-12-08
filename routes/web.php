@@ -45,10 +45,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::delete('nolike', 'LikesController@destroy')->name('likes.nolike');
     });
     
+    
+    
     Route::get('/home', 'PlacesController@index')->name('places.index');
-    Route::post('places','PlacesController@store')->name('places.store');
-    Route::put('places/{id}','PlacesController@update')->name('places.update');
-    Route::delete('places/{id}', 'PlacesController@destroy')->name('places.destroy');
-    Route::get('places/create','PlacesController@create')->name('places.create');
-    Route::get('places/{id}/edit','PlacesController@edit')->name('places.edit');
+    Route::resource('places', 'PlacesController');
+    // Route::post('places','PlacesController@store')->name('places.store');
+    // Route::put('places/{id}','PlacesController@update')->name('places.update');
+    // Route::delete('places/{id}', 'PlacesController@destroy')->name('places.destroy');
+    // Route::get('places/create','PlacesController@create')->name('places.create');
+    // Route::get('places/{id}/edit','PlacesController@edit')->name('places.edit');
 });
