@@ -29,6 +29,15 @@
                     {!! Form::number('lng', old('lng'),['class' => 'form-control']) !!}
                 </div>
                 
+                <p>緯度・経度は<a href="/map" target="brank">こちら</a>で検索してくだい</p>
+                
+                <div class="form-group">
+                    {!! Form::label('tag', 'タグ') !!}
+                    {!! Form::text('tag', old('tag'),['class' => 'form-control']) !!}
+                </div>
+                
+                <p>タグはカンマ区切り(,)で入力してください。（例:東京駅,お店）</p>
+                
                 <div class="form-group">
                     {!! Form::label('image', '画像アップロード') !!}
                     {!! Form::file('image') !!}
@@ -37,7 +46,7 @@
                 
                 {!! Form::submit('変更', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-            
+        
             {!! Form::model($place, ['route' => ['places.destroy', $place->id], 'method' => 'delete']) !!}
                 {!! Form::submit('投稿を削除', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}

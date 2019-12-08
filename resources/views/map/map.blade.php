@@ -26,9 +26,9 @@
                 var geocoder = new google.maps.Geocoder();
                 
                 document.getElementById('searh').addEventListener('click', function(){
-                   geocoder.geocode({
+                    geocoder.geocode({
                        address: document.getElementById('address').value
-                   }, function(results, status){
+                    }, function(results, status){
                        if(status !== 'OK'){
                            alert('Failed: ' +status);
                            return;
@@ -36,8 +36,8 @@
                        
                        if(results[0]){
                             var map = new google.maps.Map(target, {
-                               center: results[0].geometry.location,
-                               zoom: 18
+                                center: results[0].geometry.location,
+                                zoom: 18
                             });
                            
                             var address = results[0].formatted_address.replace(/^日本, /, '');

@@ -11,6 +11,8 @@
                 <div>  
                 @if (count($places) > 0)
                     @include('place.userplace', ['places' => $places])
+                @else
+                    <h1>投稿はまだありません。</h1>
                 @endif
                 </div>
                 <div style="text-align:center;">

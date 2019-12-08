@@ -11,9 +11,6 @@
                 <div>  
                     @include('place.userplace', ['places' => $places])
                 </div>
-                <div style="text-align:center;">
-                    {!! link_to_route('places.create', '新規投稿', [], ['class' => 'center-block btn btn-lg btn-primary' ]) !!}
-                </div>
             </div>
         </div>
     @endif

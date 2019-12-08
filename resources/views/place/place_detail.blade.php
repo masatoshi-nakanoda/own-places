@@ -18,7 +18,7 @@
             <h1>{{ $place->title }}</h1>
         </div>
             <div class="row">
-                <div class="col-md-6"><img src="{{ $place->picture_path }}" class="d-block mx-auto" max-width="700" max-height="1000"></div>
+                <div class="col-md-6"><img src="{{ $place->picture_path }}" class="d-block mx-auto" style="max-width:600px;"></div>
                 <div class="col-md-6">
                     <table class="table table-bordered">
                         <thread>
@@ -57,27 +57,26 @@
         <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT4HMf1Vh0UTo-NI8pKi57vBKcyASWp6o&callback=initMap" async defer></script>
         <script>
-                function initMap() {
-                    var map;
-                    var marker;
-                    var lat = document.getElementById( 'map' ).getAttribute( 'lat' );
-                    var lng = document.getElementById( 'map' ).getAttribute( 'lng' );
-                    var latlng = new google.maps.LatLng(lat, lng);
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: latlng,
-                        zoom: 16
-                    });
+            function initMap() {
+                var map;
+                var marker;
+                var lat = document.getElementById( 'map' ).getAttribute( 'lat' );
+                var lng = document.getElementById( 'map' ).getAttribute( 'lng' );
+                var latlng = new google.maps.LatLng(lat, lng);
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: latlng,
+                    zoom: 16
+                });
                     
-                    marker = new google.maps.Marker({
-                        position: latlng,
-                        map: map
-                    });
-                }
+                marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map
+                });
+            }
                                 
-                window.onload = function () {
-                    initMap();
-                }
+            window.onload = function () {
+                initMap();
+            }
         </script>
-    
     </body>
 </html>

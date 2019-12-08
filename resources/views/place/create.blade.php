@@ -28,7 +28,14 @@
                     {!! Form::number('lng', old('lng'),['class' => 'form-control', 'step' => 'any']) !!}
                 </div>
                 
-                <p class="mt-2">緯度・経度は<a href="/map" target="brank">こちら</a>で検索してくだい</p>
+                <p>緯度・経度は<a href="/map" target="brank">こちら</a>で検索してくだい</p>
+                
+                <div class="form-group">
+                    {!! Form::label('tag', 'タグ') !!}
+                    {!! Form::text('tag', old('tag'),['class' => 'form-control']) !!}
+                </div>
+                
+                <p>タグはカンマ区切り(,)で入力してください。（例:東京駅,お店）</p>
                 
                 <div class="form-group">
                     {!! Form::label('image', '画像アップロード') !!}

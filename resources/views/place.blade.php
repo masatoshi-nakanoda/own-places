@@ -10,12 +10,19 @@
     <body>
         @include('commons.navbar')
         @include('commons.error_messages')
-         @if(count($places) > 0)
+        <div style="text-align:right">
+        {!! Form::open(['method' => 'get']) !!}
+            {!! Form::text('keyword', null,["size" => "25","placeholder"=>"タグ一つで検索できます。"])!!}
+            {!! Form::submit('検索') !!}
+        {!! Form::close() !!}
+        </div>
+        @if(count($places) > 0)
             <table class="table">
                 <thread>
                     <tr>
                         <th>投稿日時</th>
                         <th>投稿タイトル</th>
+                        <th>タグ</th>
                     </tr>
                 </thread>
                 <tbody>
@@ -23,13 +30,17 @@
                         <tr>
                             <td>{{ $place->created_at }}</td>
                             <td><a href="{{ route('places.show', ['id' => $place->id]) }}">{{ $place->title }}</a></td>
+                            <td>@foreach($place->tags as $tag)
+                                    {{ $tag->tag }}
+                                @endforeach
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         @else
             <div class="text-center">
-                <h1>投稿はまだありません。/h1>
+                <h1>投稿はまだありません。</h1>
             </div>
         @endif
         

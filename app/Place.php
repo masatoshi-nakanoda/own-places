@@ -22,5 +22,11 @@ class Place extends Model
     {
         return $this->belongsToMany(User::class, 'likes', 'place_id', 'user_id')->withTimestamps();
     }
+    
+    // タグと投稿の多対多の関係を設定する際のDB操作
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'places_tags', 'place_id', 'tag_id')->withTimestamps();
+    }
         
 }
