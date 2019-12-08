@@ -42,7 +42,7 @@
                 
                     <div class="form-group">
                         {!! Form::label('image', '画像アップロード') !!}
-                        {!! Form::file('image'), ['required' => 'required'] !!}
+                        {!! Form::file('image', ['required' => 'required']) !!}
                     </div>
                 
                 
