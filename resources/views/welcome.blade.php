@@ -22,7 +22,7 @@
                 <br><br>
                 <h3>どの様な投稿がされているかこちらから見れます→{!! link_to_route('places.all', '投稿一覧へ', [], []) !!}</h3>
                 <br><br><br>
-                <h4>投稿は下記ユーザ登録ボタンよりユーザ登録の上実施できます</h4>
+                <h4>投稿は下記ユーザ登録ボタンよりユーザ登録の上実施できます。</h4>
                 <br><br>
                 {!! link_to_route('signup.get', 'ユーザ登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
