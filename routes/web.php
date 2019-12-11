@@ -24,6 +24,10 @@ Route::get('/map', function () {
 Route::get('place', 'PlacesController@all')->name('places.all');
 Route::get('place_detail/{id}', 'PlacesController@show')->name('places.show');
 
+
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -32,6 +36,12 @@ Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
+
+//パスワードリセット
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passwords.reset');
 
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
@@ -58,3 +68,5 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('places/create','PlacesController@create')->name('places.create');
     // Route::get('places/{id}/edit','PlacesController@edit')->name('places.edit');
 });
+
+

@@ -23,6 +23,7 @@
             {!! Form::close() !!}
             
             <p class="mt-2">ユーザ未登録の方は{!! link_to_route('signup.get', 'こちらへ') !!}</p>
+            <p class="mt-2">パスワードを忘れた方は{!! link_to_route('passwords.reset','こちらへ') !!}</p>
         </div>
     </div>
 @endsection
