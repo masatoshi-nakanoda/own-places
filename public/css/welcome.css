@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 
-body {
-  background: url("/images/top.png");
-}
+ body {
+　padding-top: 61.52%;
+  background: url("/images/top.png") no-repeat;
+  background-position: center center;
+　background-size: cover;
+　bottom: 0;
+} 

@@ -7,7 +7,6 @@
 
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
-            
             <form class="form" method="POST" action="{{ route('password.request') }}">
                 {{ csrf_field() }}
                 <input type="hidden" name="token" value="{{ $token }}">
@@ -50,7 +49,6 @@
                          パスワードリセット
                     </button>
                 </div>
-
             </form>
         </div>
     </div>

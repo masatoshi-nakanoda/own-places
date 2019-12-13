@@ -9,9 +9,10 @@
     </head>
     
     <body>
+        
         @include('commons.navbar')
         @include('commons.error_messages')
-                
+
         <div class="top">
             
             <div class="text-center">
@@ -21,13 +22,13 @@
                 </h2>
                 <br><br>
                 <h3>どの様な投稿がされているかこちらから見れます→{!! link_to_route('places.all', '投稿一覧へ', [], []) !!}</h3>
-                <br><br><br>
+                <br>
                 <h4>投稿は下記ユーザ登録ボタンよりユーザ登録の上実施できます。</h4>
-                <br><br>
+                <br>
                 {!! link_to_route('signup.get', 'ユーザ登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
-            
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

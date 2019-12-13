@@ -46,8 +46,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
     
-    Route::get('/home', 'PlacesController@index')->name('places.index');
-    Route::resource('places', 'PlacesController');
+    
+   //  Route::resource('places', 'PlacesController');
     
     Route::group(['prefix' => 'home/{id}'], function (){
        Route::get('likes', 'UsersController@likes')->name('users.likes'); 
@@ -61,12 +61,12 @@ Route::group(['middleware' => ['auth']], function () {
     
     
     
-    
-    // Route::post('places','PlacesController@store')->name('places.store');
-    // Route::put('places/{id}','PlacesController@update')->name('places.update');
-    // Route::delete('places/{id}', 'PlacesController@destroy')->name('places.destroy');
-    // Route::get('places/create','PlacesController@create')->name('places.create');
-    // Route::get('places/{id}/edit','PlacesController@edit')->name('places.edit');
+    Route::get('/home', 'PlacesController@index')->name('places.index');
+    Route::post('places','PlacesController@store')->name('places.store');
+    Route::put('places/{id}','PlacesController@update')->name('places.update');
+    Route::delete('places/{id}', 'PlacesController@destroy')->name('places.destroy');
+    Route::get('places/create','PlacesController@create')->name('places.create');
+    Route::get('places/{id}/edit','PlacesController@edit')->name('places.edit');
 });
 
 
