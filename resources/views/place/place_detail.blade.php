@@ -18,7 +18,7 @@
             <h1>{{ $place->title }}</h1>
         </div>
             <div class="row">
-                <div class="col-md-6"><img src="{{ $place->picture_path }}" class="d-block mx-auto" style="max-width=100%;"></div>
+                <div class="col-md-6"><img src="{{ $place->picture_path }}" class="d-block mx-auto" style="width: 100%; max-width: 100%; height: auto;"></div>
                 <div class="col-md-6">
                     <table class="table table-bordered">
                         <thread>
