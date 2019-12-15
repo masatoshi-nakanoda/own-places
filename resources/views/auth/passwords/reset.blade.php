@@ -23,7 +23,6 @@
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="password" class="label">新しいパスワード</label>
-                        <div class="col-md-6">
                         <input id="password" type="password" class="form-control" name="password" required>
                         
                         @if ($errors->has('password'))
