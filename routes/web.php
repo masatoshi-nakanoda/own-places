@@ -20,13 +20,13 @@ Route::get('/map', function () {
     return view('map.map');
 });
 
+Route::get('/thankyou', function () {
+    return view('thankyou');
+});
+
 // 投稿一覧ページ
 Route::get('place', 'PlacesController@all')->name('places.all');
 Route::get('place_detail/{id}', 'PlacesController@show')->name('places.show');
-
-
-
-// Route::get('/home', 'HomeController@index')->name('home');
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -46,20 +46,16 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
     
-    
-   //  Route::resource('places', 'PlacesController');
-    
     Route::group(['prefix' => 'home/{id}'], function (){
-       Route::get('likes', 'UsersController@likes')->name('users.likes'); 
+        Route::get('likes', 'UsersController@likes')->name('users.likes');
+        Route::get('delete', 'UsersController@userdelete')->name('users.delete');
+        Route::delete('destroy', 'UsersController@destroy')->name('users.destroy');
     });
     
     Route::group(['prefix' => 'place_detail/{id}'], function () {
         Route::post('like', 'LikesController@store')->name('likes.like');
         Route::delete('nolike', 'LikesController@destroy')->name('likes.nolike');
     });
-    
-    
-    
     
     Route::get('/home', 'PlacesController@index')->name('places.index');
     Route::post('places','PlacesController@store')->name('places.store');

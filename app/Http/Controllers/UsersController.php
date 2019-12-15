@@ -9,7 +9,8 @@ use App\Place;
 
 class UsersController extends Controller
 {
-    public function likes($id){
+    public function likes($id)
+    {
         
         $user = User::find($id);
         $places = $user->likes()->paginate(10);
@@ -18,5 +19,22 @@ class UsersController extends Controller
     
         
         return view('user.likes', $data);
+    }
+    
+    public function userdelete($id)
+    {
+        $user = User::find($id);
+        
+        return view('user.delete', [
+            'user' => $user,
+        ]);
+    }
+    
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        
+        return redirect('/thankyou');    
     }
 }
