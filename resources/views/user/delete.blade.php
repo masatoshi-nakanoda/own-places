@@ -5,7 +5,7 @@
         <div class="text-center">
             <h1>アカウント削除</h1>
             <p>アカウントを削除すると投稿も全て削除されます。</p>
-            {!! Form::model(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+            {!! Form::model($user, ['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
     @else

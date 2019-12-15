@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'home/{id}'], function (){
         Route::get('likes', 'UsersController@likes')->name('users.likes');
         Route::get('delete', 'UsersController@userdelete')->name('users.delete');
-        Route::delete('destroy', 'UsersController@destroy')->name('users.destroy');
+        Route::delete('dell', 'UsersController@destroy')->name('users.destroy');
     });
     
     Route::group(['prefix' => 'place_detail/{id}'], function () {
