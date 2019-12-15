@@ -15,7 +15,10 @@ class UsersController extends Controller
         $user = User::find($id);
         $places = $user->likes()->paginate(10);
         
-        $data = ['places' => $places,];
+        $data = [
+            'places' => $places,
+            'user' => $user,
+            ];
     
         
         return view('user.likes', $data);
