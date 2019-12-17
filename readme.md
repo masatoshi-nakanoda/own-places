@@ -3,7 +3,12 @@
 投稿内容は、写真・文章・マップ・タグとなっており、場所についてできるだけイメージしやすい様にしています。<br>
 https://own-places.com<br>
 
+## デモ画像
+### トップページ
 [![Image from Gyazo](https://i.gyazo.com/31d69745771731aa8a17124ae18abe52.png)](https://gyazo.com/31d69745771731aa8a17124ae18abe52)
+
+### 投稿ページ
+[![Image from Gyazo](https://i.gyazo.com/5fc166c58b4753bc67e8e7ab5c2ce9d7.png)](https://gyazo.com/5fc166c58b4753bc67e8e7ab5c2ce9d7)
 
 ## 開発環境
 Laravel5.5<br>
