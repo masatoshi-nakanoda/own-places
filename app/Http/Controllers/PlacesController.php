@@ -63,15 +63,6 @@ class PlacesController extends Controller
         // バケットの`postpictures`フォルダへアップロード
         $path = Storage::disk('s3')->putFile('postpictures', $image, 'public');
         
-        // 投稿を保存
-       //  $request->user()->places()->create([
-        //        'title' => $request->title,
-          //      'content' => $request->content,
-            // アップロードした画像のフルパスを取得
-        //        'picture_path' => $request->picture_path = Storage::disk('s3')->url($path),
-          //      'lat' => $request->lat,
-            //    'lng' => $request->lng,
-        //    ]);
         
         $place = new Place;
         $place->title = $request->title;
@@ -120,6 +111,9 @@ class PlacesController extends Controller
         $this->validate($request,[
                 'title' => 'required|max:191',
                 'content' => 'required|max:191',
+                'lat' =>'numeric',
+                'lng' =>'numeric',
+                'image' => 'file|image|mimes:jpeg,png,jpg,gif',
             ]);
         
             $image = $request->file('image');
@@ -132,6 +126,17 @@ class PlacesController extends Controller
         $place->lat = $request->lat;
         $place->lng = $request->lng;
         $place->save();
+        
+        $tag_names = explode(',',$request->tag);
+        $tag_ids = [];
+        foreach ($tag_names as $tag_name) {
+            $tag = Tag::firstOrCreate([
+                'tag' => $tag_name,
+            ]);
+            $tag_ids[] = $tag->id;
+        }
+        
+        $place->tags()->sync($tag_ids);
             
         return redirect ('/home');
     }
