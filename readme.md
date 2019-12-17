@@ -7,7 +7,7 @@ https://own-places.com<br>
 ### トップページ
 [![Image from Gyazo](https://i.gyazo.com/31d69745771731aa8a17124ae18abe52.png)](https://gyazo.com/31d69745771731aa8a17124ae18abe52)
 
-### 投稿ページ
+### 投稿詳細ページ
 [![Image from Gyazo](https://i.gyazo.com/5fc166c58b4753bc67e8e7ab5c2ce9d7.png)](https://gyazo.com/5fc166c58b4753bc67e8e7ab5c2ce9d7)
 
 ## 開発環境
@@ -16,4 +16,3 @@ PHP7.2<br>
 Apache2.4<br>
 MySQL5.7<br>
 CentOS7<br>
-
