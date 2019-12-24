@@ -10,7 +10,8 @@
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
                 {!! Form::model($place, ['route' => ['places.update', $place->id], 'method' => 'put', 'enctype' => 'multipart/form-data']) !!}
-            
+                {{ csrf_field() }}
+                
                     <div class="form-group">
                         {!! Form::label('title', '※タイトル') !!}
                         {!! Form::text('title', old('title'), ['class' => 'form-control', 'required' => 'required', 'maxlength' => '191']) !!}

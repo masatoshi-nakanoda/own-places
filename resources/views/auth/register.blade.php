@@ -8,6 +8,7 @@
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
             {!! Form::open(['route' => 'signup.post']) !!}
+            {{ csrf_field() }}
                 <div class="form-group">
                     {!! Form::label('name', 'ユーザ名') !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
